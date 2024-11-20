@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import RecipeItem from "../Recipe Item/RecipeItem";
 import "./RecipeList.css";
-export default function RecipeList({ recipes }) {
+import { RecipeContext } from "../../context/RecipeContext";
+export default function RecipeList() {
+  const { recipes } = useContext(RecipeContext);
   return (
     <>
       <h2>Recipe List </h2>

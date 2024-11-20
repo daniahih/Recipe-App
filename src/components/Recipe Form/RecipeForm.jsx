@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./RecipeForm.css";
+import { RecipeContext } from "../../context/RecipeContext";
 // eslint-disable-next-line react/prop-types
-export default function RecipeForm({ addRecipe }) {
+export default function RecipeForm() {
   const [recipeName, setRecipeName] = useState("");
   const [Instruction, setInstruction] = useState("");
   const [Category, setCategory] = useState("Lunch");
+  const { addRecipe } = useContext(RecipeContext);
   function handelSubmit(e) {
     e.preventDefault();
     const newRecipe = { recipeName, Instruction, Category };
